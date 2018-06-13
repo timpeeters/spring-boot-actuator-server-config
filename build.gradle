@@ -8,6 +8,8 @@ checkstyle {
     toolVersion = '8.10.1'
 }
 
+defaultTasks 'build'
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-autoconfigure:1.5.13.RELEASE'
 }
