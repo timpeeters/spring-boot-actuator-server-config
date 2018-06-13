@@ -1,6 +1,7 @@
 plugins {
     id 'checkstyle'
     id 'java-library'
+    id 'pmd'
 }
 
 checkstyle {
@@ -12,6 +13,14 @@ defaultTasks 'build'
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-autoconfigure:1.5.13.RELEASE'
+}
+
+pmd {
+    consoleOutput = true
+    ignoreFailures = true
+    ruleSetFiles = files("${rootProject.projectDir}/config/pmd/ruleset.xml")
+    ruleSets = []
+    toolVersion = '6.4.0'
 }
 
 sourceCompatibility = 1.8
