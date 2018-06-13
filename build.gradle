@@ -1,5 +1,6 @@
 plugins {
     id 'checkstyle'
+    id 'io.spring.dependency-management' version '1.0.5.RELEASE'
     id 'java-library'
     id 'pmd'
 }
@@ -12,7 +13,14 @@ checkstyle {
 defaultTasks 'build'
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-autoconfigure:1.5.13.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-autoconfigure'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.junit:junit-bom:5.2.0'
+        mavenBom 'org.springframework.boot:spring-boot-dependencies:1.5.13.RELEASE'
+    }
 }
 
 pmd {
