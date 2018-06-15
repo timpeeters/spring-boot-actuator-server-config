@@ -1,6 +1,7 @@
 plugins {
     id 'checkstyle'
     id 'io.spring.dependency-management' version '1.0.5.RELEASE'
+    id "jacoco"
     id 'java-library'
     id 'pmd'
 }
@@ -33,6 +34,12 @@ dependencyManagement {
     }
 }
 
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
+
 pmd {
     consoleOutput = true
     ignoreFailures = true
@@ -43,3 +50,5 @@ pmd {
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+check.dependsOn jacocoTestReport
