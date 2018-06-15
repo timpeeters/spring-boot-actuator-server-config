@@ -2,3 +2,9 @@ language: java
 
 jdk:
   - oraclejdk8
+
+before_install:
+  - wget -q -O ~/codacy-coverage-reporter-assembly.jar https://github.com/codacy/codacy-coverage-reporter/releases/download/4.0.1/codacy-coverage-reporter-4.0.1-assembly.jar
+
+after_success:
+  - java -jar ~/codacy-coverage-reporter-assembly.jar report -l Java -r target/site/jacoco/jacoco.xml
