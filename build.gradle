@@ -30,7 +30,7 @@ dependencyManagement {
     }
 
     imports {
-        mavenBom 'org.springframework.boot:spring-boot-dependencies:1.5.14.RELEASE'
+        mavenBom 'org.springframework.boot:spring-boot-dependencies:2.0.3.RELEASE'
     }
 }
 
