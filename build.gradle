@@ -13,13 +13,23 @@ checkstyle {
 defaultTasks 'build'
 
 dependencies {
+    compileOnly "org.springframework.boot:spring-boot-configuration-processor"
+    implementation 'org.apache.tomcat.embed:tomcat-embed-core'
+    implementation 'org.slf4j:slf4j-api'
+    implementation 'org.springframework.boot:spring-boot-actuator'
     implementation 'org.springframework.boot:spring-boot-autoconfigure'
+    testImplementation 'junit:junit'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-web'
 }
 
 dependencyManagement {
+    dependencies {
+        dependency 'org.assertj:assertj-core:3.10.0'
+    }
+
     imports {
-        mavenBom 'org.junit:junit-bom:5.2.0'
-        mavenBom 'org.springframework.boot:spring-boot-dependencies:1.5.13.RELEASE'
+        mavenBom 'org.springframework.boot:spring-boot-dependencies:1.5.14.RELEASE'
     }
 }
 
@@ -28,7 +38,7 @@ pmd {
     ignoreFailures = true
     ruleSetFiles = files("${rootProject.projectDir}/config/pmd/ruleset.xml")
     ruleSets = []
-    toolVersion = '6.4.0'
+    toolVersion = '6.3.0'
 }
 
 sourceCompatibility = 1.8

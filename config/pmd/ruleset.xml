@@ -8,6 +8,7 @@
     <description/>
 
     <rule ref="category/java/bestpractices.xml">
+        <exclude name="AbstractClassWithoutAbstractMethod"/>
         <exclude name="AccessorClassGeneration"/>
         <exclude name="AccessorMethodGeneration"/>
         <exclude name="JUnitAssertionsShouldIncludeMessage"/>
@@ -54,10 +55,12 @@
     </rule>
 
     <rule ref="category/java/design.xml">
+        <exclude name="DataClass"/>
         <exclude name="LawOfDemeter"/>
         <exclude name="LoosePackageCoupling"/>
         <exclude name="SignatureDeclareThrowsException"/>
         <exclude name="TooManyMethods"/>
+        <exclude name="UseUtilityClass"/>
     </rule>
 
     <rule ref="category/java/design.xml/SignatureDeclareThrowsException">
