@@ -8,7 +8,15 @@ cache:
     - $HOME/.m2
 
 before_install:
+  - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
+  - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
   - wget -q -O ~/codacy-coverage-reporter-assembly.jar https://github.com/codacy/codacy-coverage-reporter/releases/download/4.0.1/codacy-coverage-reporter-4.0.1-assembly.jar
+
+install:
+    mvn --settings .settings.xml install -DskipTests=true -B -V
+
+script:
+    mvn clean deploy --settings .settings.xml -B -U -Prelease
 
 after_success:
   - java -jar ~/codacy-coverage-reporter-assembly.jar report -l Java -r target/site/jacoco/jacoco.xml
