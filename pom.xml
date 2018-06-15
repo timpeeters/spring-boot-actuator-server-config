@@ -139,6 +139,18 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>3.0.0</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.puppycrawl.tools</groupId>
+                            <artifactId>checkstyle</artifactId>
+                            <version>8.10.1</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>3.1.0</version>
                 </plugin>
@@ -207,6 +219,25 @@
         </pluginManagement>
 
         <plugins>
+            <plugin>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <configuration>
+                            <configLocation>${basedir}/config/checkstyle/checkstyle.xml</configLocation>
+                            <encoding>UTF-8</encoding>
+                            <consoleOutput>true</consoleOutput>
+                            <failsOnError>false</failsOnError>
+                        </configuration>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
