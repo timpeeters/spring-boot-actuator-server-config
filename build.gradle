@@ -56,7 +56,23 @@ repositories {
     mavenCentral()
 }
 
+task sourceJar(type: Jar) {
+    classifier "sources"
+    from sourceSets.main.allJava
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier "javadoc"
+    from javadoc.destinationDir
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 check.dependsOn jacocoTestReport
+
+artifacts {
+    archives jar
+    archives sourceJar
+    archives javadocJar
+}
