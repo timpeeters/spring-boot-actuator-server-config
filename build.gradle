@@ -48,6 +48,10 @@ pmd {
     toolVersion = '6.3.0'
 }
 
+repositories {
+    mavenCentral()
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
