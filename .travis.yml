@@ -3,6 +3,10 @@ language: java
 jdk:
   - oraclejdk8
 
+cache:
+  directories:
+    - $HOME/.m2
+
 before_install:
   - wget -q -O ~/codacy-coverage-reporter-assembly.jar https://github.com/codacy/codacy-coverage-reporter/releases/download/4.0.1/codacy-coverage-reporter-4.0.1-assembly.jar
 
