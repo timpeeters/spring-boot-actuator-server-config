@@ -16,7 +16,7 @@ install:
     mvn --settings .settings.xml install -DskipTests=true -B -V
 
 script:
-    mvn clean deploy --settings .settings.xml -B -U
+    mvn clean deploy --settings .settings.xml -B -U -Prelease
 
 after_success:
   - java -jar ~/codacy-coverage-reporter-assembly.jar report -l Java -r target/site/jacoco/jacoco.xml
