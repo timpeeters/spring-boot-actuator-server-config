@@ -46,7 +46,6 @@ server.tomcat.min-spare-threads=${server.tomcat.max-threads}
 ```
 
 
-
 References
 ----------
 https://github.com/spring-projects/spring-boot/issues/9560
