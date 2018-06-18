@@ -33,4 +33,5 @@ deploy:
         name: ${project.version}
         on:
             repo: timpeeters/spring-boot-actuator-server-config
+            tags: true
         skip_cleanup: true
