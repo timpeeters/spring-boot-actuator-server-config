@@ -10,7 +10,7 @@
     <artifactId>spring-boot-actuator-server-config</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Spring Boot Actuator Tomcat</name>
+    <name>Spring Boot Actuator Server Config</name>
     <description>Enables configuration of Spring Boot management server when running on a separate port.</description>
     <url>https://github.com/timpeeters/spring-boot-actuator-server-config</url>
 
