@@ -14,7 +14,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @TestPropertySource(properties = {
-        "debug=true",
         "management.server.jetty.acceptors=1",
         "management.server.tomcat.max-threads=2",
         "management.server.undertow.worker-threads=3"
