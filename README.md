@@ -35,12 +35,12 @@ It might make sense to use a big thread pool for the public traffic while using 
 By default Spring Boot will apply all the settings of the default port to the management port as well.
 Using `spring-boot-actuator-server-config`, we can configure the management port independently.
 
-Below we leverage the following properties to configure the management thread pool: `management.tomcat.max-threads` and `management.tomcat.min-spare-threads`.
+Below we leverage the following properties to configure the management thread pool: `management.server.tomcat.max-threads` and `management.server.tomcat.min-spare-threads`.
 
 ```properties
 management.port=8081
-management.tomcat.max-threads=5
-management.tomcat.min-spare-threads=${management.tomcat.max-threads}
+management.server.tomcat.max-threads=5
+management.server.tomcat.min-spare-threads=${management.tomcat.max-threads}
 
 server.port=8080
 server.tomcat.max-threads=200
