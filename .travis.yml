@@ -31,6 +31,7 @@ deploy:
     - target/spring-boot-actuator-server-config-${project.version}.jar
   name: ${project.version}
   on:
+    repo: timpeeters/spring-boot-actuator-server-config
     tags: true
   provider: releases
   skip_cleanup: true
