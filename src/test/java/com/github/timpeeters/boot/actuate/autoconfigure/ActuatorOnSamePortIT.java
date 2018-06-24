@@ -27,7 +27,7 @@ import static org.assertj.core.api.Assertions.assertThat;
         "management.tomcat.min-spare-threads=1",
         "server.tomcat.max-threads=20",
         "server.tomcat.min-spare-threads=10"})
-public class ActuatorOnSamePortIntegrationTest extends AbstractIntegrationTest {
+public class ActuatorOnSamePortIT extends AbstractIT {
     @Test
     public void verifyManagementThreadPool() {
         assertThat(getManagementProtocol())
