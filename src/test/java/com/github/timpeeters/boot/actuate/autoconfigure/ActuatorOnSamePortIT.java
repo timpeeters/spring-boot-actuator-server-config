@@ -16,12 +16,10 @@
 package com.github.timpeeters.boot.actuate.autoconfigure;
 
 import org.junit.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource(properties = {
         "management.tomcat.max-threads=5",
         "management.tomcat.min-spare-threads=1",
