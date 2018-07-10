@@ -23,6 +23,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @TestPropertySource(properties = {
         "management.tomcat.max-threads=5",
         "management.tomcat.min-spare-threads=1",
+        "server.port=0",
         "server.tomcat.max-threads=20",
         "server.tomcat.min-spare-threads=10"})
 public class ActuatorOnSamePortIT extends AbstractIT {
