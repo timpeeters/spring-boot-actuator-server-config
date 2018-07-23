@@ -21,7 +21,8 @@ import org.springframework.test.context.TestPropertySource;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TestPropertySource(properties = {
-        "management.port=0",
+        "debug=true",
+        "management.server.port=0",
         "management.server.tomcat.max-threads=5",
         "management.server.tomcat.min-spare-threads=1",
         "server.tomcat.max-threads=20",

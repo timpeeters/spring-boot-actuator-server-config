@@ -19,43 +19,66 @@ import org.apache.coyote.AbstractProtocol;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.actuate.autoconfigure.ManagementContextResolver;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.embedded.EmbeddedWebApplicationContext;
-import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.ApplicationContext;
+import org.springframework.boot.web.context.WebServerApplicationContext;
+import org.springframework.boot.web.context.WebServerInitializedEvent;
+import org.springframework.boot.web.embedded.tomcat.TomcatWebServer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.event.EventListener;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.Optional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public abstract class AbstractIT {
     @Autowired
-    private ApplicationContext applicationContext;
+    private WebServerApplicationContext applicationContext;
 
     @Autowired
-    private ManagementContextResolver managementContextResolver;
+    private TestApplication.ManagementContextResolver managementContextResolver;
 
     protected AbstractProtocol<?> getManagementProtocol() {
-        return getProtocol(managementContextResolver.getApplicationContext());
+        return getProtocol(managementContextResolver.getManagementContext().orElse(applicationContext));
     }
 
     protected AbstractProtocol<?> getDefaultProtocol() {
         return getProtocol(applicationContext);
     }
 
-    private AbstractProtocol<?> getProtocol(ApplicationContext context) {
+    private AbstractProtocol<?> getProtocol(WebServerApplicationContext context) {
         return (AbstractProtocol) getEmbeddedServletContainer(context).getTomcat().getConnector().getProtocolHandler();
     }
 
-    private TomcatEmbeddedServletContainer getEmbeddedServletContainer(ApplicationContext context) {
-        return (TomcatEmbeddedServletContainer) ((EmbeddedWebApplicationContext) context).getEmbeddedServletContainer();
+    private TomcatWebServer getEmbeddedServletContainer(WebServerApplicationContext context) {
+        return (TomcatWebServer) context.getWebServer();
     }
 
     @SpringBootApplication
     public static class TestApplication {
         public static void main(String[] args) {
             SpringApplication.run(TestApplication.class, args);
+        }
+
+        @Bean
+        public ManagementContextResolver managementContextResolver() {
+            return new ManagementContextResolver();
+        }
+
+        public static class ManagementContextResolver {
+            private WebServerApplicationContext managementContext;
+
+            public Optional<WebServerApplicationContext> getManagementContext() {
+                return Optional.ofNullable(managementContext);
+            }
+
+            @EventListener
+            public void onEvent(WebServerInitializedEvent event) {
+                Optional.ofNullable(event.getApplicationContext().getServerNamespace())
+                        .filter(n -> "management".equals(n))
+                        .ifPresent(n -> managementContext = event.getApplicationContext());
+            }
         }
     }
 }
