@@ -1,5 +1,2 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.github.timpeeters.boot.actuate.autoconfigure.ActuatorServerAutoConfiguration
-
 org.springframework.boot.actuate.autoconfigure.web.ManagementContextConfiguration=\
   com.github.timpeeters.boot.actuate.autoconfigure.ActuatorServerAutoConfiguration
