@@ -6,7 +6,6 @@ Spring Boot Actuator Server Config
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/266850f2744f4d84af468b1ccd40dc2c)](https://www.codacy.com/app/timpeeters/spring-boot-actuator-server-config?utm_source=github.com&utm_medium=referral&utm_content=timpeeters/spring-boot-actuator-server-config&utm_campaign=Badge_Coverage)
 [![Known Vulnerabilities](https://snyk.io/test/github/timpeeters/spring-boot-actuator-server-config/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/timpeeters/spring-boot-actuator-server-config?targetFile=pom.xml)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=timpeeters/spring-boot-actuator-server-config)](https://dependabot.com)
-[![Maven Central](https://img.shields.io/maven-central/v/com.github.timpeeters/spring-boot-actuator-server-config.svg)](https://repo1.maven.org/maven2/com/github/timpeeters/spring-boot-actuator-server-config/)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.timpeeters/spring-boot-actuator-server-config/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.timpeeters/spring-boot-actuator-server-config)
 
 
