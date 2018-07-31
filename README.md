@@ -39,7 +39,7 @@ Using `spring-boot-actuator-server-config`, we can configure the management port
 Below we leverage the following properties to configure the management thread pool: `management.server.tomcat.max-threads` and `management.server.tomcat.min-spare-threads`.
 
 ```properties
-management.port=8081
+management.server.port=8081
 management.server.tomcat.max-threads=5
 management.server.tomcat.min-spare-threads=${management.tomcat.max-threads}
 
@@ -51,4 +51,4 @@ server.tomcat.min-spare-threads=${server.tomcat.max-threads}
 
 References
 ----------
-https://github.com/spring-projects/spring-boot/issues/9560
+- https://github.com/spring-projects/spring-boot/issues/9560
