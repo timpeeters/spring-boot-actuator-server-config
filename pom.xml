@@ -43,6 +43,8 @@
     </distributionManagement>
 
     <properties>
+        <jackson.version>2.9.8</jackson.version>
+
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
@@ -150,6 +152,17 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- Overwrite version from Spring Boot because of security vulnerability:
+            https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-72448
+            Can be removed once Spring Boot updates to jackson 2.9.8+ -->
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <dependency>
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-core</artifactId>
