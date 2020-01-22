@@ -1,7 +1,7 @@
 Spring Boot Actuator Server Config
 ==================================
 
-[![Build Status](https://api.travis-ci.org/timpeeters/spring-boot-actuator-server-config.svg?branch=master)](https://www.travis-ci.org/timpeeters/spring-boot-actuator-server-config)
+[![Build Status](https://api.travis-ci.com/timpeeters/spring-boot-actuator-server-config.svg?branch=master)](https://www.travis-ci.com/timpeeters/spring-boot-actuator-server-config)
 [![Known Vulnerabilities](https://snyk.io/test/github/timpeeters/spring-boot-actuator-server-config/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/timpeeters/spring-boot-actuator-server-config?targetFile=pom.xml)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=timpeeters/spring-boot-actuator-server-config)](https://dependabot.com)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.timpeeters/spring-boot-actuator-server-config/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.timpeeters/spring-boot-actuator-server-config)
