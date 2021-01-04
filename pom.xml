@@ -463,7 +463,7 @@
             <properties>
                 <sonar.host.url>https://sonarcloud.io</sonar.host.url>
                 <sonar.organization>timpeeters</sonar.organization>
-                <sonar.projectKey>com.github.timpeeters:spring-boot-actuator-server-config</sonar.projectKey>
+                <sonar.projectKey>${project.groupId}:${project.artifactId}</sonar.projectKey>
             </properties>
         </profile>
     </profiles>
