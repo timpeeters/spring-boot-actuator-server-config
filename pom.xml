@@ -457,5 +457,14 @@
                 </plugins>
             </build>
         </profile>
+
+        <profile>
+            <id>sonar</id>
+            <properties>
+                <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+                <sonar.organization>timpeeters</sonar.organization>
+                <sonar.projectKey>com.github.timpeeters:spring-boot-actuator-server-config</sonar.projectKey>
+            </properties>
+        </profile>
     </profiles>
 </project>
