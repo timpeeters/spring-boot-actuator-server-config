@@ -2,7 +2,6 @@ Spring Boot Actuator Server Config
 ==================================
 
 [![Known Vulnerabilities](https://snyk.io/test/github/timpeeters/spring-boot-actuator-server-config/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/timpeeters/spring-boot-actuator-server-config?targetFile=pom.xml)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=timpeeters/spring-boot-actuator-server-config)](https://dependabot.com)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.timpeeters/spring-boot-actuator-server-config/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.timpeeters/spring-boot-actuator-server-config)
 
 
